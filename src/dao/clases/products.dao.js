@@ -45,7 +45,7 @@ export default class Product {
             return result
         }catch{
             console.log(error)
-          return res.status(404).send({status:"error", error:'error al eliminar el producto'})
+          return res.status(500).send({status:"error", error:'error al eliminar el producto'})
         }
     }
 }

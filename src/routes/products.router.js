@@ -1,10 +1,19 @@
 const { Router } = require("express");
 const { productModel } = require("../models/products.model");
 const mongoosePaginate = require("mongoose-paginate-v2");
+const { getProducts } = require("../Controllers/productsControllers");
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/", getProducts)
+router.get("/:pid", getProductsById)
+router.post("/", createProducts)
+router.post("/:pid/products", addProducts)
+router.delete("/pid", deleteProducts)
+
+export default router
+
+/* router.get("/", async (req, res) => {
   try {
       const { sort, category, limit } = req.query;
       const query = {};
@@ -55,11 +64,11 @@ router.put("/:uid", async (req, res) => {
 
   let userToReplace = req.body;
   if (
-    !userToReplace.name ||
-    !userToReplace.category ||
-    !userToReplace.price ||
-    !userToReplace.stock ||
-    !userToReplace.image
+   /!userToReplace.name ||
+    /!userToReplace.category ||
+   /!userToReplace.price ||
+    /!userToReplace.stock ||
+    /!userToReplace.image
   ) {
     res.send({ status: "error", error: "Faltan parámetros, por favor completar" });
   }
@@ -72,6 +81,6 @@ router.delete("/:uid", async (req, res) => {
   let { uid } = req.params;
   let result = await productModel.deleteOne({ _id: uid });
   res.send({ result: "success", payload: result });
-});
+}); */
 // la descripcion es para el el app.js pueda consumir lo de este archivo
-module.exports = router;
+//module.exports = router;
