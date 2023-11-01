@@ -1,10 +1,19 @@
+import { getCart, getCartById } from "../Controllers/cartsControllers";
+
 const { Router } = require("express");
 const { cartModel } = require("../models/carts.model");
 const mongoosePaginate = require("mongoose-paginate-v2");
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/", getCart)
+router.get("/:cid/product", getCartById)
+router.post("/", createCart)
+router.put("/:cid", resolveCart)
+router.delete("/", deleteCart)
+
+export default router
+/* router.get("/", async (req, res) => {
   const page = parseInt(req.query.page) || 1; 
   const limit = parseInt(req.query.limit) || 10; 
   try {
@@ -126,3 +135,4 @@ router.delete("/:cartId", async (req, res) => {
 
 
 module.exports = router
+ */
