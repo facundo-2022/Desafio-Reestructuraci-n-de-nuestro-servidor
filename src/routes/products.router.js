@@ -1,14 +1,15 @@
-const { Router } = require("express");
+/* |
 const { productModel } = require("../models/products.model");
 const mongoosePaginate = require("mongoose-paginate-v2");
-const { getProducts } = require("../Controllers/productsControllers");
-
+const { getProducts } = require("../Controllers/productsControllers"); */
+ import {getProducts, getProductsById, createProducts, addProduct, deleteProducts} from '../Controllers/productsControllers.js'
+ import {Router}  from 'express'
 const router = Router();
 
 router.get("/", getProducts)
 router.get("/:pid", getProductsById)
 router.post("/", createProducts)
-router.post("/:pid/products", addProducts)
+router.post("/:pid/products", addProduct)
 router.delete("/pid", deleteProducts)
 
 export default router

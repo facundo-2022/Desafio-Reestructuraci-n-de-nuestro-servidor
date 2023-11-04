@@ -1,7 +1,7 @@
 //importamos a carts para crear el carrito con sus atributos y a products para que al agregar, modificar, actualizar o eliminar un prodructo lo llamemos desde el dao desde la class creada por sus endpoints
 
-import Cart from '../dao/classes/carts.dao.js'
-import Product from '../dao/classes/products.dao.js'
+import Cart from '../dao/clases/carts.dao.js'
+import Product from '../dao/clases/products.dao.js'
 
 
 const cartService = new Cart()

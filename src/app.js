@@ -1,4 +1,9 @@
-const express = require("express");
+import express  from "express";
+import mongoose from 'mongoose'
+import usuarioRouter from './routes/usuarios.router.js'
+import productRouter from './routes/products.router.js'
+import cartRouter from './routes/carts.router.js'
+/* const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const handlebars = require("express-handlebars");
@@ -8,7 +13,7 @@ const initializePassport = require("./config/passport.config");
 const productRouter = require("./routes/products.router");
 const cartRouter = require("./routes/carts.router");
 const { generateToken, authToken } = require("../utils");
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser"); */
 const PRIVATE_KEY = "CoderKey"
 const app = express();
 const port = 8080;
@@ -18,7 +23,7 @@ const MongoStore = require("connect-mongo"); */
 
 
 //los middleware
-initializePassport(passport)
+/* initializePassport(passport)
 app.use(passport.initialize())
 app.set(passport.session())
 app.use (cookieParser())
@@ -31,9 +36,9 @@ app.use(bodyParser.json());
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
+ */
 
-
-
+/* 
  const users = []
 
 app.post('/register', (req, res) => {
@@ -48,7 +53,7 @@ app.post('/register', (req, res) => {
 
     const access_token = generateToken(user)
     res.send({status: "success", access_token})
-})
+}) */
  
 app.use(express.json());
 
@@ -80,11 +85,11 @@ app.use(express.json());
 
 
 
-app.get("/current", authToken ,(req, res) =>{
+/* app.get("/current", authToken ,(req, res) =>{
   res.send({status: "success", payload: req.user})
   console.log
 })
-
+ */
 
 app.listen(port, () => {
   console.log(`Serving is running on port ${port}`);

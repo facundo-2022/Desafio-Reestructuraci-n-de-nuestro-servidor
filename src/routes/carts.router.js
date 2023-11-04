@@ -1,8 +1,8 @@
-import { getCart, getCartById } from "../Controllers/cartsControllers";
-
-const { Router } = require("express");
+import { getCart, getCartById, createCart, resolveCart, deleteCart } from "../Controllers/cartsControllers.js";
+import { Router} from 'express'
+/* const { Router } = require("express");
 const { cartModel } = require("../models/carts.model");
-const mongoosePaginate = require("mongoose-paginate-v2");
+const mongoosePaginate = require("mongoose-paginate-v2"); */
 
 const router = Router();
 

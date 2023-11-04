@@ -1,4 +1,4 @@
-import usuario from '../dao/clases/usuario.dao.js'
+import User from '../dao/clases/usuario.dao.js'
 
 const usuarioService = new User()
 export const getUser = async(req, res) =>{

@@ -1,5 +1,5 @@
 
-import Product from '../dao/classes/products.dao.js'
+import Product from '../dao/clases/products.dao.js'
 
 const productService = new Product()
 

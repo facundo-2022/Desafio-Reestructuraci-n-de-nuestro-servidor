@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+/* const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
-
+ */
 const userCollection = "users";
 
 //El esquema de modelado de como van a lucir los datos
@@ -20,4 +21,6 @@ const userSchema = mongoose.Schema({
 
 const userModel = mongoose.model(userCollection, userSchema);
 
-module.exports = { userModel };
+/* module.exports = { userModel }; */
+ export default userModel
+ 
